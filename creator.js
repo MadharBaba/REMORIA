@@ -160,10 +160,7 @@ generateBtn.addEventListener("click", async () => {
 
         localStorage.setItem(vaultId, JSON.stringify(vaultData));
 
-        const shareUrl = `${window.location.origin}${window.location.pathname.replace(
-            "creator.html",
-            "index.html"
-        )}?vault=${vaultId}`;
+        const shareUrl = `${window.location.origin}/portal.html?vault=${vaultId}`;
 
         generatedLinkInput.value = shareUrl;
         previewLink.href = shareUrl;
