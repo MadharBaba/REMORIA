@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Memory Vault</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+    <audio id="bgMusic" loop></audio>
+    <audio id="clickSound"></audio>
+    <audio id="successSound"></audio>
+
+    <!-- ============== SCREEN 1: BOOT SCREEN ============== -->
+    <section id="bootScreen" class="screen active theme-hacker">
+        <div class="boot-container">
+
+            <div class="remoria-brand">
+                <h1>REMORIA</h1>
+                <p>A World Built From Memories</p>
+            </div>
+
+
+            <div class="boot-header">
+                <p class="boot-system-label">REMORIA MEMORY VAULT</p>
+            </div>
+            <p class="boot-line" id="bootLine1"></p>
+            <p class="boot-line" id="bootLine2"></p>
+            <p class="boot-line" id="bootLine3"></p>
+            <p class="boot-line" id="bootLine4"></p>
+            <div class="boot-footer hidden" id="bootFooter">
+                <p class="boot-greeting" id="bootGreeting"></p>
+                <p class="boot-subtitle hidden" id="bootSubtitle"></p>
+                <button id="enterBtn" class="enter-btn">ENTER EXPERIENCE &gt;</button>
+                <p class="boot-tip">TIP: Smiles detected ahead :)</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== SCREEN 2: QUIZ / UNLOCK SCREEN ============== -->
+    <section id="quizScreen" class="screen theme-quiz">
+        <div class="quiz-container">
+            <div class="quiz-header">
+                <span class="vault-access-label">VAULT ACCESS</span>
+                <span class="quiz-counter" id="quizCounter">1 / 3</span>
+            </div>
+            <div class="progress-bar">
+                <div class="progress-fill" id="quizProgress"></div>
+            </div>
+
+            <h2 id="quizQuestion" class="quiz-question">Question goes here</h2>
+
+            <div class="quiz-options" id="quizOptions"></div>
+
+            <p class="quiz-feedback" id="quizFeedback"></p>
+        </div>
+    </section>
+
+    <!-- ============== SCREEN 3: GLITCH TRANSITION ============== -->
+    <section id="glitchScreen" class="screen theme-glitch">
+        <div class="glitch-container">
+            <div class="glitch-icon">⚠</div>
+            <h1 class="glitch-text">ERROR_404</h1>
+
+            <p class="glitch-line">Memory Vault Overload!</p>
+            <p class="glitch-line">System not responding...</p>
+            <p class="glitch-line">Attempting to restore...</p>
+
+            <div class="fake-progress">
+                <div class="fake-progress-fill" id="fakeProgressFill"></div>
+            </div>
+            <p class="glitch-percent" id="glitchPercent">0%</p>
+
+            <div class="glitch-message hidden" id="glitchMessage">
+                Just kidding...<br />
+                Unlocking real memories for you &lt;3
+            </div>
+        </div>
+    </section>
+
+    <!-- ============== SCREEN 4: MEMORY TIMELINE ============== -->
+    <section id="vaultRevealScreen" class="screen">
+        <video id="vaultRevealVideo" preload="auto" playsinline>
+            <source src="assets/videos/vault_reveal.mp4" type="video/mp4">
+        </video>
+    </section>
+    <section id="timelineScreen" class="screen theme-timeline">
+        <div class="timeline-wrapper">
+
+            <div class="memory-sidebar">
+                <p class="sidebar-title">MEMORIES UNLOCKED</p>
+                <p class="sidebar-count" id="memoryProgressLabel">2 / 4</p>
+                <div class="progress-bar sidebar-progress">
+                    <div class="progress-fill" id="memoryProgress"></div>
+                </div>
+                <ul class="memory-list" id="memoryList"></ul>
+            </div>
+
+            <div class="timeline-container">
+                <div class="memory-card" id="memoryCard">
+                    <p class="decrypt-text" id="decryptText">Decrypting memory_01...</p>
+                    <img id="memoryImage" src="" alt="memory" class="memory-img hidden" />
+                    <p class="memory-caption hidden" id="memoryCaption"></p>
+                    <button class="memory-heart hidden" id="memoryHeart">♡</button>
+                </div>
+
+                <button id="nextMemoryBtn" class="next-memory-btn hidden">&gt; NEXT MEMORY</button>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ============== SCREEN 5: FINAL REVEAL ============== -->
+
+
+    <section id="crystalTransitionScreen" class="screen">
+        <video id="crystalTransitionVideo" preload="auto" playsinline>
+            <source src="assets/videos/crystal_transition.mp4" type="video/mp4">
+        </video>
+    </section>
+
+    <!-- SCREEN 6 : BIRTHDAY CELEBRATION VIDEO -->
+
+    <section id="celebrationScreen" class="screen">
+
+        <video id="celebrationVideo" preload="auto" playsinline>
+            <source src="assets/videos/celebration_portal.mp4" type="video/mp4">
+        </video>
+
+        <div id="videoOverlayText">
+            <h1 id="videoBirthdayTitle"></h1>
+        </div>
+
+    </section>
+
+   
+
+
+
+
+    <section id="finalScreen" class="screen theme-final">
+
+        <!-- Floating hearts background -->
+        <div class="floating-hearts">
+            <span>❤️</span>
+            <span>💖</span>
+            <span>💕</span>
+            <span>💗</span>
+            <span>💞</span>
+            <span>✨</span>
+            <span>🌸</span>
+        </div>
+
+        <div class="final-container">
+            <!-- Terminal save prompt -->
+            <div class="terminal-prompt" id="terminalPrompt">
+                <div class="terminal-box">
+                    <p class="terminal-label">MEMORY VAULT TERMINAL</p>
+                    <p class="terminal-line">All memories decrypted.</p>
+                    <p class="terminal-line">All moments verified.</p>
+                    <p class="terminal-line terminal-feel">All feels... too real ♥</p>
+                    <div class="terminal-heart-graphic">
+                        <div class="heart-outline">💎</div>
+                    </div>
+
+
+                    <p class="terminal-save-prompt">Do you want to save these<br />memories forever?</p>
+                    <p class="terminal-input-line">Save Memory? (Y/N): <span class="cursor-blink">█</span></p>
+                    <button id="confirmSaveBtn" class="save-yes-btn">Y</button>
+                </div>
+            </div>
+
+            <!-- Celebration content (shown after Y) -->
+
+
+
+
+
+            <div class="celebration hidden" id="celebrationContent">
+                <div class="music-note">♪</div>
+
+                <h1 class="reveal-title" id="birthdayTitle">Happy Birthday ❤️</h1>
+
+                <div class="message-card">
+                    <p class="reveal-message-intro">To the most amazing person,<br />Thank you for being you.</p>
+                    <p class="reveal-message" id="finalMessage"></p>
+                </div>
+
+                <div class="action-buttons">
+                    <button id="replayBtn" class="replay-btn">🔄 REPLAY MEMORY VAULT</button>
+                    <button id="downloadBtn" class="download-btn hidden">⬇ DOWNLOAD MEMORY</button>
+                </div>
+            </div>
+        </div>
+
+        <canvas id="confettiCanvas"></canvas>
+    </section>
+
+    <!-- Error screen for missing/invalid vault -->
+    <section id="errorScreen" class="screen theme-hacker">
+        <div class="boot-container">
+            <p class="boot-line">⚠ Vault not found.</p>
+            <p class="boot-line" style="color:#7a8c84; font-size:0.85rem;">
+                Check the link or ask the sender to regenerate it.
+            </p>
+        </div>
+    </section>
+
+
+    <div id="videoOverlay" class="video-overlay hidden">
+        <video id="portalVideo" preload="auto">
+            <source src="assets/videos/portal_intro.mp4" type="video/mp4">
+        </video>
+    </div>
+
+    <div id="cinematicFade"></div>
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>
