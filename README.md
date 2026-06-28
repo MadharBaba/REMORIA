@@ -1,5 +1,11 @@
 # 💎 REMORIA — A World Built From Memories
 
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black)
+![Firebase](https://img.shields.io/badge/Firebase-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)
+![Vercel](https://img.shields.io/badge/Vercel-000000?style=for-the-badge&logo=vercel&logoColor=white)
+
 > *Memories aren't meant to be stored. They're meant to be experienced.*
 
 REMORIA is an immersive web experience that transforms a simple birthday wish into an unforgettable interactive memory journey.
@@ -20,6 +26,15 @@ The result is a cinematic web experience where memories become the gift.
 
 ---
 
+# 🌐 Live Demo
+
+🔗 **Live Website:** https://remoria-bay.vercel.app
+
+> **Best Experience:** Optimized for desktop and laptop browsers.
+> Mobile devices are supported, and landscape mode is recommended for the best cinematic experience.
+
+---
+
 # 🌟 Features
 
 - 🎁 Personalized Memory Vault Creator
@@ -28,7 +43,8 @@ The result is a cinematic web experience where memories become the gift.
 - ❓ Interactive Quiz Verification
 - ⚡ Glitch Unlock Animation
 - 🖼 Progressive Memory Reveal
-- 💎 Save Memory Experience
+- ☁️ Cloud-Based Memory Vault Storage (Firebase Firestore)
+- 🌍 Cross-Device Shareable Memory Links
 - 🎉 Magical Birthday Celebration
 - 💌 Heartfelt Final Message
 - 🎵 Optional Background Music
@@ -40,10 +56,31 @@ The result is a cinematic web experience where memories become the gift.
 - HTML5
 - CSS3
 - JavaScript (ES6)
+- Firebase Firestore
+- Git & GitHub
+- Vercel Deployment
 - Responsive UI Design
 - Glassmorphism
 - Cinematic Visual Design
 - Interactive Animations
+
+---
+
+# 🏗 Architecture
+
+Creator Page
+↓
+Firebase Firestore
+↓
+Shareable Vault Link
+↓
+Portal Verification
+↓
+Memory Timeline
+↓
+Birthday Celebration
+↓
+Final Message
 
 ---
 
@@ -95,19 +132,22 @@ The result is a cinematic web experience where memories become the gift.
 - Personalized memory sharing
 - Responsive design
 - Modern frontend implementation
+- Firebase Cloud Database Integration
+- Real-time Shareable Memory Vaults
+- Live Deployment on Vercel
 
 ---
 
 # 🚀 Future Improvements
 
 - User authentication
-- Cloud memory storage
 - AI-generated birthday messages
 - Multiple themes
 - Music library integration
 - QR code sharing
-- Custom animations
-- Mobile-first enhancements
+- Mobile-first optimization
+- Password-protected Memory Vaults
+- Email-based Memory Vault Sharing
 
 ---
 
@@ -130,3 +170,6 @@ B.Tech in Computer Science & Engineering (AI & ML)
 ---
 
 ⭐ If you enjoyed REMORIA, consider giving this repository a star!
+
+💻 Best experienced on Desktop & Laptop browsers.
+📱 Mobile devices are supported, with landscape mode recommended for the optimal cinematic experience.
