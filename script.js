@@ -3,6 +3,9 @@
 // ============================================================
 
 // ---------- Elements ----------
+import { loadVault } from "./firebase.js";
+
+let vaultData = null;
 const videoOverlay = document.getElementById("videoOverlay");
 const portalVideo = document.getElementById("portalVideo");
 
@@ -76,22 +79,29 @@ function getVaultIdFromUrl() {
     return params.get("vault");
 }
 
-function loadVaultData() {
+async function loadVaultData() {
     const vaultId = getVaultIdFromUrl();
     if (!vaultId) return null;
-    const raw = localStorage.getItem(vaultId);
-    if (!raw) return null;
-    try { return JSON.parse(raw); }
-    catch (e) { return null; }
-}
 
-const vaultData = loadVaultData();
-
-if (!vaultData) {
-    showScreen("errorScreen");
-} else {
-    initVault(vaultData);
+    return await loadVault(vaultId);
 }
+// function loadVaultData() {
+//     const vaultId = getVaultIdFromUrl();
+//     if (!vaultId) return null;
+//     const raw = localStorage.getItem(vaultId);
+//     if (!raw) return null;
+//     try { return JSON.parse(raw); }
+//     catch (e) { return null; }
+// }
+
+loadVaultData().then(data => {
+    vaultData = data;
+    if (!vaultData) {
+        showScreen("errorScreen");
+    } else {
+        initVault(vaultData);
+    }
+});
 
 // ============================================================
 // MAIN FLOW
@@ -476,7 +486,7 @@ function playCelebrationVideo() {
 
     video.play();
 
-    
+
     video.onended = () => {
         title.style.opacity = "0";
         title.classList.remove("video-title-shoow");
@@ -790,7 +800,7 @@ function spawnPortalParticle() {
         easing: 'cubic-bezier(.25,.1,.25,1)',
         fill: 'forwards'
     });
-    
+
 
     setTimeout(() => p.remove(), duration + 50);
 }
@@ -822,7 +832,7 @@ function animateWordsToPortal(containerEl, onComplete) {
 
         clone.style.position = 'fixed';
         clone.style.zIndex = '99999';
-     
+
         const style = window.getComputedStyle(el);
         clone.style.font = style.font;
         clone.style.color = style.color;

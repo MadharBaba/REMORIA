@@ -3,8 +3,10 @@
 // Handles: dynamic question/memory blocks, image previews,
 // validation, vault ID generation, localStorage save (Day 1).
 // Firebase save will replace localStorage logic on Day 2.
-// ============================================================
 
+import { saveVault } from "./firebase.js";
+
+// ============================================================
 const questionsContainer = document.getElementById("questionsContainer");
 const memoriesContainer = document.getElementById("memoriesContainer");
 const questionTemplate = document.getElementById("questionTemplate");
@@ -158,10 +160,10 @@ generateBtn.addEventListener("click", async () => {
         const vaultData = await collectVaultData();
         const vaultId = generateVaultId();
 
-        localStorage.setItem(vaultId, JSON.stringify(vaultData));
 
         const shareUrl = `${window.location.origin}/portal.html?vault=${vaultId}`;
-
+        await saveVault(vaultId, vaultData);
+        const shareUrl = `https://remoria-bay.vercel.app/portal.html?vault=${vaultId}`;
         generatedLinkInput.value = shareUrl;
         previewLink.href = shareUrl;
         generatedLinkBox.classList.remove("hidden");
