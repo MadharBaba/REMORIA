@@ -161,7 +161,6 @@ generateBtn.addEventListener("click", async () => {
         const vaultId = generateVaultId();
 
 
-        const shareUrl = `${window.location.origin}/portal.html?vault=${vaultId}`;
         await saveVault(vaultId, vaultData);
         const shareUrl = `https://remoria-bay.vercel.app/portal.html?vault=${vaultId}`;
         generatedLinkInput.value = shareUrl;
